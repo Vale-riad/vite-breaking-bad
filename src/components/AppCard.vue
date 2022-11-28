@@ -8,8 +8,8 @@ export default {
 </script>
 <template>
   <main class="d-flex">
-    <div class="text-center px-2 py-2 mx-2 mb-2">
-      <img class="img-fluid mt-2" :src="info.img" alt="" />
+    <div class="text-center px-2 py-2 mx-4 mb-2">
+      <img class="img-fluid mt-2 p-2" :src="info.img" alt="" />
       <h5 class="mb-3">{{ info.name }}</h5>
       <h6>{{ info.category }}</h6>
       <span class="status">{{ info.status }}</span>
@@ -21,7 +21,7 @@ export default {
   background-color: var(--primary-color);
   width: 200px;
   img {
-    width: 100px;
+    object-fit: contain;
   }
   h5 {
     color: white;
