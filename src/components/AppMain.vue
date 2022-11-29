@@ -18,19 +18,19 @@ export default {
   },
   methods: {
     changeSerie() {
-      console.log("ricerca");
+      axios
+        .get("https://www.breakingbadapi.com/api/characters", {
+          params: {
+            category: this.store.statusValue,
+          },
+        })
+        .then((resp) => {
+          this.store.characters = resp.data;
+        });
     },
   },
   created() {
-    axios
-      .get("https://www.breakingbadapi.com/api/characters", {
-        params: {
-          category: this.store.statusValue,
-        },
-      })
-      .then((resp) => {
-        this.store.characters = resp.data;
-      });
+    this.changeSerie();
   },
 };
 </script>
