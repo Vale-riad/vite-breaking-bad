@@ -16,11 +16,14 @@ export default {
       <select
         class="form-select w-auto"
         v-model="store.statusValue"
-        @change="$emit('change')"
+        @change="$emit('filter')"
       >
         <option value="" selected>Select category</option>
-        <option value="Breaking+Bad">Breaking Bad</option>
-        <option value="Better+Call+Saul">Better Call Saul</option>
+        <option value="Breaking Bad">Breaking Bad</option>
+        <option value="Better Call Saul">Better Call Saul</option>
+        <option value="Breaking Bad, Better Call Saul">
+          Breaking Bad and Better Call Saul
+        </option>
       </select>
     </div>
   </div>
