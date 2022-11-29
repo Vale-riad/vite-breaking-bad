@@ -1,5 +1,5 @@
 <script>
-import axios from "axios";
+import { store } from "../store";
 import AppCard from "./AppCard.vue";
 export default {
   name: "AppSection",
@@ -8,13 +8,8 @@ export default {
   },
   data() {
     return {
-      characters: [],
+      store,
     };
-  },
-  created() {
-    axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
-      this.characters = resp.data;
-    });
   },
 };
 </script>
@@ -25,7 +20,7 @@ export default {
     </div>
     <div class="container-sm d-flex text-center">
       <AppCard
-        v-for="character in characters"
+        v-for="character in store.characters"
         class="col-lg-2 m-2"
         :info="character"
       />
