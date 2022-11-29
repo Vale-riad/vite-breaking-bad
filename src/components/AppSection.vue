@@ -18,7 +18,7 @@ export default {
     <div class="container-sm">
       <h6 class="py-3">Found 62 characters</h6>
     </div>
-    <div class="container-sm d-flex text-center">
+    <div class="container-sm d-flex justify-content-around">
       <AppCard
         v-for="character in store.characters"
         class="col-lg-2 m-2"
