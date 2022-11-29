@@ -23,10 +23,10 @@ export default {
     <div class="container-sm">
       <h6 class="py-3">Found 62 characters</h6>
     </div>
-    <div class="container-sm d-flex">
+    <div class="container-sm d-flex text-center">
       <AppCard
         v-for="character in characters"
-        class="col-lg-2"
+        class="col-lg-2 m-2"
         :info="character"
       />
     </div>
@@ -36,6 +36,7 @@ export default {
 .container-lg {
   background-color: var(--secondary-color);
 }
+
 .container-sm {
   flex-wrap: wrap;
   h6 {
