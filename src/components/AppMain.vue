@@ -16,17 +16,28 @@ export default {
       store,
     };
   },
+  methods: {
+    changeSerie() {
+      console.log("ricerca");
+    },
+  },
   created() {
-    axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
-      this.store.characters = resp.data;
-    });
+    axios
+      .get("https://www.breakingbadapi.com/api/characters", {
+        params: {
+          category: this.store.statusValue,
+        },
+      })
+      .then((resp) => {
+        this.store.characters = resp.data;
+      });
   },
 };
 </script>
 
 <template>
   <main>
-    <AppSearch />
+    <AppSearch @change="changeSerie" />
     <AppSection />
   </main>
 </template>
