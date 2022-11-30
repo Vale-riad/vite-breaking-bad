@@ -18,10 +18,10 @@ export default {
     <div class="container-sm">
       <h6 class="py-3">Found {{ store.characters.length }} characters</h6>
     </div>
-    <div class="container-sm d-flex justify-content-around">
+    <div class="container-sm row justify-content-around">
       <AppCard
         v-for="character in store.characters"
-        class="col-lg-2 m-2"
+        class="my-col m-2"
         :info="character"
       />
     </div>
@@ -37,6 +37,18 @@ export default {
   h6 {
     color: white;
     background-color: #212529;
+  }
+  .my-col {
+    width: calc(100% - 32px);
+    @include media-breakpoint-up(sm) {
+      width: calc(50% - 32px);
+    }
+    @include media-breakpoint-up(md) {
+      width: calc((100% / 3) - 32px);
+    }
+    @include media-breakpoint-up(lg) {
+      width: calc(20% - 32px);
+    }
   }
 }
 </style>

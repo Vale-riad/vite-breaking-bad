@@ -12,7 +12,7 @@ export default {
 <template>
   <div class="container">
     <div class="col-auto mt-3 mb-3">
-      <label for="series">Choose a series:</label>
+      <label for="series" class="mb-1">Choose a series:</label>
       <select
         class="form-select w-auto"
         v-model="store.statusValue"
@@ -28,4 +28,8 @@ export default {
     </div>
   </div>
 </template>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+label {
+  color: white;
+}
+</style>
